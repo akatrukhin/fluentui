@@ -18,10 +18,26 @@ export const renderAccordionHeader_unstable = (
     <AccordionHeaderProvider value={contextValues.accordionHeader}>
       <state.root>
         <state.button>
-          {state.expandIconPosition === 'start' && state.expandIcon && <state.expandIcon />}
+          {state.expandIconPosition === 'start' &&
+            state.expandIcon &&
+            (state.iconMotion ? (
+              <state.iconMotion>
+                <state.expandIcon />
+              </state.iconMotion>
+            ) : (
+              <state.expandIcon />
+            ))}
           {state.icon && <state.icon />}
           {state.root.children}
-          {state.expandIconPosition === 'end' && state.expandIcon && <state.expandIcon />}
+          {state.expandIconPosition === 'end' &&
+            state.expandIcon &&
+            (state.iconMotion ? (
+              <state.iconMotion>
+                <state.expandIcon />
+              </state.iconMotion>
+            ) : (
+              <state.expandIcon />
+            ))}
         </state.button>
       </state.root>
     </AccordionHeaderProvider>

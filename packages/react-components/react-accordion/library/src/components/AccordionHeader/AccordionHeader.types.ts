@@ -1,5 +1,6 @@
 import type { ComponentProps, ComponentState, Slot } from '@fluentui/react-utilities';
 import type { ARIAButtonSlotProps } from '@fluentui/react-aria';
+import type { PresenceMotionSlotProps } from '@fluentui/react-motion';
 import type { AccordionHeaderContextValue } from '../../contexts/accordionHeader';
 
 export type AccordionHeaderSize = 'small' | 'medium' | 'large' | 'extra-large';
@@ -26,6 +27,7 @@ export type AccordionHeaderSlots = {
    * Expand icon slot rendered before (or after) children content in heading.
    */
   icon?: Slot<'div'>;
+  iconMotion?: Slot<PresenceMotionSlotProps>;
 };
 
 export type AccordionHeaderProps = ComponentProps<Partial<AccordionHeaderSlots>> & {

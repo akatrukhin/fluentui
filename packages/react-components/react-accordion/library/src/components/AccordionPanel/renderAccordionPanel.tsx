@@ -9,9 +9,11 @@ import type { AccordionPanelState, AccordionPanelSlots } from './AccordionPanel.
  */
 export const renderAccordionPanel_unstable = (state: AccordionPanelState) => {
   assertSlots<AccordionPanelSlots>(state);
-  return (
+  return state.collapseMotion ? (
     <state.collapseMotion>
       <state.root>{state.root.children}</state.root>
     </state.collapseMotion>
+  ) : (
+    <state.root>{state.root.children}</state.root>
   );
 };

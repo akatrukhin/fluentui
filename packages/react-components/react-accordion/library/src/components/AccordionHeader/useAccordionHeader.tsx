@@ -6,7 +6,7 @@ import { useAccordionContext_unstable } from '../../contexts/accordion';
 import { ChevronRightRegular } from '@fluentui/react-icons';
 import { useFluent_unstable as useFluent } from '@fluentui/react-shared-contexts';
 import { useAccordionItemContext_unstable } from '../../contexts/accordionItem';
-import { motionTokens } from '@fluentui/react-motion';
+import { motionTokens, presenceMotionSlot } from '@fluentui/react-motion';
 
 /**
  * Returns the props and state required to render the component
@@ -69,6 +69,11 @@ export const useAccordionHeader_unstable = (
       button: 'button',
       expandIcon: 'span',
       icon: 'div',
+      // TODO: remove once React v18 slot API is modified
+      // This is a problem at the moment due to UnknownSlotProps assumption
+      // that `children` property is `ReactNode`, which in this case is not valid
+      // as PresenceComponentProps['children'] is `ReactElement`
+      iconMotion: AccordionIconMotion as React.FC<PresenceMotionSlotProps>,
     },
     root: slot.always(
       getIntrinsicElementProps('div', {
@@ -81,6 +86,14 @@ export const useAccordionHeader_unstable = (
       { elementType: 'div' },
     ),
     icon: slot.optional(icon, { elementType: 'div' }),
+    iconMotion: presenceMotionSlot(props.iconMotion, {
+      elementType: AccordionIconMotion,
+      defaultProps: {
+        appear: true,
+        visible: open,
+        unmountOnExit: true,
+      },
+    }),
     expandIcon: slot.optional(expandIcon, {
       renderByDefault: true,
       defaultProps: {
