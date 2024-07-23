@@ -6,6 +6,7 @@ import type { AccordionPanelSlots, AccordionPanelState } from './AccordionPanel.
 
 export const accordionPanelClassNames: SlotClassNames<AccordionPanelSlots> = {
   root: 'fui-AccordionPanel',
+  collapseMotion: 'fui-AccordionPanel__collapseMotion',
 };
 
 /**
