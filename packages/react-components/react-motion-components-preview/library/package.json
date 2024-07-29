@@ -36,6 +36,9 @@
   },
   "dependencies": {
     "@fluentui/react-motion": "*",
+    "@fluentui/react-shared-contexts": "*",
+    "@fluentui/react-utilities": "*",
+    "@griffel/react": "*",
     "@swc/helpers": "^0.5.1"
   },
   "peerDependencies": {

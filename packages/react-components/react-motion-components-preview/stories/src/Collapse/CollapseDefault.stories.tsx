@@ -1,6 +1,6 @@
+import * as React from 'react';
 import { Field, makeStyles, tokens, Switch } from '@fluentui/react-components';
 import { Collapse } from '@fluentui/react-motion-components-preview';
-import * as React from 'react';
 
 const useClasses = makeStyles({
   container: {
@@ -10,7 +10,10 @@ const useClasses = makeStyles({
   },
   card: {
     gridArea: 'card',
-    padding: '10px',
+    padding: '12px',
+    margin: '16px',
+    border: `${tokens.strokeWidthThicker} solid ${tokens.colorNeutralForeground3}`,
+    borderRadius: tokens.borderRadiusSmall,
   },
   controls: {
     display: 'flex',
@@ -20,20 +23,22 @@ const useClasses = makeStyles({
     border: `${tokens.strokeWidthThicker} solid ${tokens.colorNeutralForeground3}`,
     borderRadius: tokens.borderRadiusMedium,
     boxShadow: tokens.shadow16,
-    padding: '10px',
   },
   field: {
     flex: 1,
   },
 });
 
-const LoremIpsum = () => (
-  <>
-    {'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '.repeat(
-      10,
-    )}
-  </>
-);
+const LoremIpsum = () => {
+  const classes = useClasses();
+  return (
+    <div className={classes.card}>
+      {'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '.repeat(
+        10,
+      )}
+    </div>
+  );
+};
 
 export const Default = () => {
   const classes = useClasses();
@@ -43,15 +48,13 @@ export const Default = () => {
     <div className={classes.container}>
       <div className={classes.controls}>
         <Field className={classes.field}>
-          <Switch label="Visible" checked={visible} onChange={() => setVisible(v => !v)} />
+          <Switch label="Open" checked={visible} onChange={() => setVisible(v => !v)} />
         </Field>
-      </div>
 
-      <Collapse visible={visible}>
-        <div className={classes.card}>
+        <Collapse open={visible}>
           <LoremIpsum />
-        </div>
-      </Collapse>
+        </Collapse>
+      </div>
     </div>
   );
 };

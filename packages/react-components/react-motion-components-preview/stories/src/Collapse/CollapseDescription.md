@@ -1,13 +1,13 @@
-The `Collapse` component manages content presence, using a height expand/collapse motion.
+The `Collapse` component manages content presence, using Collapse in/out.
 
 > **⚠️ Preview components are considered unstable**
 
 ```tsx
 import { Collapse } from '@fluentui/react-motion-components-preview';
 
-function Component({ visible }) {
+function Component({ open }) {
   return (
-    <Collapse visible={visible}>
+    <Collapse open={open}>
       <div style={{ background: 'lightblue' }}>Content</div>
     </Collapse>
   );

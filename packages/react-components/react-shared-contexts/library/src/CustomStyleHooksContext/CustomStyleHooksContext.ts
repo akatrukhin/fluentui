@@ -28,6 +28,7 @@ export type CustomStyleHooksContextValue = Partial<{
   useToggleButtonStyles_unstable: CustomStyleHook;
   useCheckboxStyles_unstable: CustomStyleHook;
   useComboboxStyles_unstable: CustomStyleHook;
+  useCollapseStyles_unstable: CustomStyleHook;
   useDropdownStyles_unstable: CustomStyleHook;
   useListboxStyles_unstable: CustomStyleHook;
   useListStyles_unstable: CustomStyleHook;

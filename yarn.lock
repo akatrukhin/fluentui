@@ -1995,6 +1995,14 @@
     "@griffel/core" "^1.16.0"
     tslib "^2.1.0"
 
+"@griffel/react@*":
+  version "1.5.25"
+  resolved "https://registry.yarnpkg.com/@griffel/react/-/react-1.5.25.tgz#1d3615b77814120786dcdb602d04986166cfaaef"
+  integrity sha512-ZGiCdn71VIX56fd3AxM7ouCxgClPvunOFIpXxFKebGJ94/rdj4sIbahuI1QBUFuU4/bqUyD6QonjDEpFBl9ORw==
+  dependencies:
+    "@griffel/core" "^1.18.0"
+    tslib "^2.1.0"
+
 "@griffel/react@^1.0.0", "@griffel/react@^1.5.14", "@griffel/react@^1.5.22":
   version "1.5.22"
   resolved "https://registry.yarnpkg.com/@griffel/react/-/react-1.5.22.tgz#90b589f7d6015405d38ebe624d08e793813c2164"
@@ -2015,6 +2023,13 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@griffel/style-types/-/style-types-1.1.0.tgz#b7e8d8f03d32162c81ab539fe59886ea0aa1dea2"
   integrity sha512-cINLeC14/YUHlrtL96vzCrsFr19WUO0i9DuljBtX5S7B8pMyiNf6Pw0htjroLojvfD2okhdsr9CHwpUxz1u4kw==
+  dependencies:
+    csstype "^3.1.3"
+
+"@griffel/style-types@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@griffel/style-types/-/style-types-1.2.0.tgz#2bfb4b900c316c65e513ab38e6b2fa94241a5122"
+  integrity sha512-x166MNw0vWe5l5qhinfNT4eyWOaP48iFzPyFOfIB0/BVidKTWsEe5PmqRJDDtrJFS3VHhd/tE0oM6tkEMh2tsg==
   dependencies:
     csstype "^3.1.3"
 

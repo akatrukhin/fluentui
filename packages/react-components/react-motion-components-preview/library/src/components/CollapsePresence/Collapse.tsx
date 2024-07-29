@@ -37,13 +37,13 @@ const collapseMotion: PresenceMotionFn<{ animateOpacity?: boolean }> = ({ elemen
 };
 
 /** A React component that applies collapse/expand transitions to its children. */
-export const Collapse = createPresenceComponent(collapseMotion);
+export const CollapsePresence = createPresenceComponent(collapseMotion);
 
-export const CollapseSnappy = createPresenceComponentVariant(Collapse, {
+export const CollapsePresenceSnappy = createPresenceComponentVariant(CollapsePresence, {
   all: { duration: motionTokens.durationUltraFast },
 });
 
-export const CollapseExaggerated = createPresenceComponentVariant(Collapse, {
+export const CollapsePresenceExaggerated = createPresenceComponentVariant(CollapsePresence, {
   enter: { duration: motionTokens.durationSlow, easing: motionTokens.curveEasyEaseMax },
   exit: { duration: motionTokens.durationNormal, easing: motionTokens.curveEasyEaseMax },
 });
